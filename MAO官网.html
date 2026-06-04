@@ -1796,94 +1796,128 @@ section {
 }
 
 /* ==========================================================
-   23. RESPONSIVE BASE
+   23. RESPONSIVE - Mobile
    ========================================================== */
 @media (max-width: 768px) {
   :root {
-    --section-pad-y: 80px;
-    --section-pad-x: 6vw;
+    --section-pad-y: 60px;
+    --section-pad-x: 5vw;
+    --header-height: 52px;
   }
 
-  .header-nav {
-    gap: 16px;
-  }
-  .nav-link {
-    font-size: 11px;
-    letter-spacing: 0;
-  }
+  /* ---- Header ---- */
+  .header-logo { height: 28px; }
+  .header-brand-name { font-size: 14px; }
+  .header-brand-cn { font-size: 11px; }
+  .header-nav { gap: 10px; }
+  .nav-link { font-size: 10px; letter-spacing: 0; }
 
-  .hero-title-en {
-    font-size: 26px;
-    white-space: normal;
-  }
-  .hero-title-cn {
-    font-size: 16px;
-  }
+  /* ---- Hero ---- */
+  .section-hero { padding-top: calc(var(--header-height) + 30px); padding-bottom: 30px; }
+  .hero-totem-img { width: 130px; }
+  .hero-title-en { font-size: 22px; white-space: normal; letter-spacing: 1px; }
+  .hero-title-cn { font-size: 14px; letter-spacing: 2px; }
+  .hero-subtitle { font-size: 11px; letter-spacing: 1px; margin-bottom: 30px; }
+  .hero-cta { gap: 12px; }
+  .btn { padding: 10px 20px; font-size: 11px; letter-spacing: 1px; }
+  .hero-scroll-hint { bottom: 16px; }
+  .scroll-text { font-size: 10px; }
 
-  .brand-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .brand-grid::before {
-    display: none;
-  }
+  /* ---- Section header ---- */
+  .section-header { font-size: 18px; margin-bottom: 30px; letter-spacing: 1px; }
+  .section-intro { font-size: 13px; margin-bottom: 24px; }
+  .intro-note { font-size: 11px; }
 
-  .product-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .product-card {
-    flex-direction: column;
-  }
+  /* ---- Brand ---- */
+  .brand-grid { grid-template-columns: 1fr; gap: 16px; }
+  .brand-grid::before { display: none; }
+  .brand-card { padding: 24px 20px; }
+  .brand-card-label { font-size: 22px; }
+  #brand-card-dot .brand-card-label { font-size: 36px; }
+  .brand-card-body { font-size: 12px; }
 
-  .founder-quote-line {
-    white-space: normal;
-    font-size: 16px;
-  }
-  .team-cards {
-    gap: 16px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .team-card {
-    flex: 1 1 auto !important;
-  }
-  .team-cards:hover .team-card {
-    flex: 1 1 auto !important;
-    opacity: 1;
-  }
-  .team-cards .team-card:hover {
-    flex: 1 1 auto !important;
-  }
-  .team-card-expand {
-    max-height: none;
-    opacity: 1;
-  }
-  .expand-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px 16px 20px;
-  }
-  .expand-stats {
-    justify-content: center;
-  }
-  .expand-quirk {
-    text-align: left;
-  }
-  .paw-print-large {
-    font-size: 40px;
-  }
+  /* ---- Products ---- */
+  .product-grid { grid-template-columns: 1fr; gap: 14px; }
+  .product-card { flex-direction: column; padding: 20px; gap: 16px; }
+  .product-visual { width: 100px; margin: 0 auto; }
+  .product-name { font-size: 18px; }
+  .product-code { font-size: 10px; }
+  .product-features { font-size: 12px; }
+  .product-tagline { font-size: 12px; }
+  .whitepaper-link { font-size: 11px; }
 
-  .news-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  /* ---- Team ---- */
+  .founder-paws { gap: 16px; margin-bottom: 20px; }
+  .paw-print-large { font-size: 40px; }
+  .founder-quote-line { white-space: normal; font-size: 15px; }
+  .founder-quote-author { font-size: 12px; }
+  .team-cards { gap: 14px; flex-direction: column; align-items: stretch; }
+  .team-card { flex: 1 1 auto !important; margin-top: 0; }
+  .team-card-expand { max-height: none; opacity: 1; }
+  .expand-inner { flex-direction: column; align-items: center; text-align: center; padding: 10px 12px 16px; }
+  .expand-photo { width: 120px; height: 140px; }
+  .expand-info h3 { font-size: 18px; }
+  .expand-bio { font-size: 12px; }
+  .expand-stats { justify-content: center; gap: 14px; }
+  .stat-num { font-size: 15px; }
+  .expand-quirk { text-align: left; font-size: 11px; }
 
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  /* ---- News ---- */
+  .news-layout { grid-template-columns: 1fr; gap: 30px; }
+  .news-subtitle { font-size: 14px; }
+  .news-card { padding: 16px 18px; }
+  .news-card-title { font-size: 14px; }
+  .news-card-excerpt { font-size: 12px; }
+  .timeline-column { padding-left: 0; }
+  .timeline-date { font-size: 11px; }
+  .timeline-title { font-size: 13px; }
+
+  /* ---- Contact ---- */
+  .contact-layout { grid-template-columns: 1fr; gap: 30px; }
+  .contact-form { gap: 14px; }
+  .form-label { font-size: 11px; }
+  .form-input, .form-select, .form-textarea { font-size: 13px; padding: 10px 12px; }
+  .btn-submit { align-self: stretch; text-align: center; font-size: 13px; }
+  .contact-info-card { padding: 24px 20px; }
+  .info-label { font-size: 13px; }
+  .info-value { font-size: 14px; }
+  .info-disclaimer { font-size: 12px; }
+
+  /* ---- Footer ---- */
+  #footer { padding: 40px var(--section-pad-x) 20px; }
+  .footer-credits { flex-direction: column; gap: 12px; height: auto; margin-bottom: 24px; align-items: flex-start; }
+  .credits-label { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid var(--meow-cyan-dim); padding-bottom: 6px; font-size: 16px; }
+  .credits-track { width: 100%; height: 24px; }
+  .danmaku-item { font-size: 12px; }
+  .footer-tagline-en { font-size: 13px; }
+  .footer-tagline-cn { font-size: 11px; }
+  .footer-copy { font-size: 10px; }
+
+  /* ---- Modal ---- */
+  .modal-container { padding: 24px 20px; width: 95%; }
+  .modal-body h3 { font-size: 17px; }
+
+  /* ---- Hack popup ---- */
+  .hack-popup { padding: 24px 20px; }
+  .hack-404-img { width: 130px; }
+  .hack-404-title { font-size: 17px; }
+  .hack-terminal { font-size: 11px; }
+
+  /* ---- Particles - disable on mobile ---- */
+  .particle { display: none; }
+
+  /* ---- Entry animation - skip on mobile ---- */
+  #entry-canvas { display: none !important; }
+
+  /* ---- Easter egg fish ---- */
+  .easter-fish { font-size: 18px; }
+  .cat-popup-img { width: 100px; }
+
+  /* ---- Disable hover expand on touch ---- */
+  .product-grid:hover .product-card,
+  .team-cards:hover .team-card { opacity: 1; transform: scale(1); }
+  .product-grid .product-card:hover { transform: scale(1.03); }
+  .team-cards .team-card:hover { transform: scale(1.02); }
 }
 </style>
 

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — 此页面已被猫咪删除 | Mao.MEOW</title>
+<style>
+/* ==========================================================
+   Mao.MEOW 404 — Shared Design Tokens
+   ========================================================== */
+:root {
+  --bg-deep:      #050510;
+  --meow-cyan:    #00f0ff;
+  --meow-cyan-dim:rgba(0,240,255,0.25);
+  --terminal-green:#00ff41;
+  --text-primary: #e0e0f0;
+  --text-dim:     rgba(224,224,240,0.4);
+  --font-mono:    'Consolas','Courier New',monospace;
+  --font-cn:      'Microsoft YaHei','PingFang SC',sans-serif;
+  --neon-glow-sm: 0 0 4px var(--meow-cyan),0 0 8px var(--meow-cyan-dim);
+  --neon-glow-md: 0 0 7px var(--meow-cyan),0 0 18px var(--meow-cyan-dim),0 0 35px var(--meow-cyan-dim);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--meow-cyan-dim) var(--bg-deep);}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-deep)}
+::-webkit-scrollbar-thumb{background:var(--meow-cyan-dim);border-radius:3px}
+
+body{
+  font-family:var(--font-cn),'Segoe UI',sans-serif;
+  background:var(--bg-deep);
+  color:var(--text-primary);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:url('images/cursor-paw.png') 16 16, auto;
+  overflow:hidden;
+}
+a,button{
+  cursor:url('images/cursor-paw.png') 16 16, pointer;
+  color:inherit;text-decoration:none;
+}
+
+/* ==========================================================
+   PARTICLES (copied from main site)
+   ========================================================== */
+@keyframes float-up {
+  0%{transform:translateY(0) translateX(0) scale(1);opacity:0}
+  10%{opacity:0.5}
+  90%{opacity:0.15}
+  100%{transform:translateY(-100vh) translateX(var(--drift,0px)) scale(0.2);opacity:0}
+}
+.particle{
+  position:fixed;bottom:-10px;z-index:0;pointer-events:none;
+  border-radius:50%;background:var(--meow-cyan);
+  box-shadow:0 0 4px var(--meow-cyan-dim);
+  animation:float-up linear forwards;will-change:transform;
+}
+
+/* ==========================================================
+   SCENE
+   ========================================================== */
+.scene{
+  position:relative;z-index:1;
+  text-align:center;
+  padding:40px;
+  max-width:600px;
+}
+
+/* ASCII Cat */
+.cat-img{
+  width:280px;
+  height:auto;
+  filter:drop-shadow(0 0 10px var(--meow-cyan-dim));
+  margin-bottom:20px;
+  display:inline-block;
+}
+
+/* Ink bottle (CSS art) */
+.ink-bottle{
+  display:inline-block;
+  position:relative;
+  width:40px;height:50px;
+  margin:0 10px 20px;
+  border:1px solid var(--meow-cyan-dim);
+  border-radius:8px 8px 4px 4px;
+  box-shadow:var(--neon-glow-sm);
+  transform:rotate(15deg);
+}
+.ink-bottle::before{
+  content:'';
+  position:absolute;
+  top:-10px;left:8px;
+  width:22px;height:12px;
+  border:1px solid var(--meow-cyan-dim);
+  border-radius:3px 3px 0 0;
+  border-bottom:none;
+}
+.ink-bottle::after{
+  content:'';
+  position:absolute;
+  bottom:-8px;right:-15px;
+  width:30px;height:16px;
+  background:rgba(0,240,255,0.08);
+  border-radius:50%;
+  box-shadow:0 0 8px rgba(0,240,255,0.15);
+  animation:ink-spread 3s ease-in-out infinite;
+}
+@keyframes ink-spread{
+  0%,100%{transform:scale(1);opacity:0.3}
+  50%{transform:scale(1.4);opacity:0.6}
+}
+
+/* 404 Number */
+.error-code{
+  font-family:var(--font-mono);
+  font-size:72px;
+  font-weight:200;
+  color:var(--meow-cyan);
+  text-shadow:var(--neon-glow-md);
+  letter-spacing:12px;
+  margin-bottom:12px;
+  display:block;
+}
+
+/* Message */
+.error-msg{
+  font-family:var(--font-cn),sans-serif;
+  font-size:20px;
+  color:var(--text-primary);
+  margin-bottom:8px;
+  letter-spacing:3px;
+}
+.error-sub{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--text-dim);
+  letter-spacing:1px;
+  margin-bottom:40px;
+}
+
+/* Terminal output */
+.terminal{
+  text-align:left;
+  background:rgba(10,10,30,0.6);
+  border:1px solid var(--meow-cyan-dim);
+  border-radius:8px;
+  padding:20px 24px;
+  margin-bottom:36px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  line-height:1.8;
+  color:var(--terminal-green);
+}
+.terminal .prompt{color:var(--meow-cyan);}
+.terminal .error{color:#ff4477;}
+.terminal .dim{color:var(--text-dim);}
+
+/* Home button */
+.btn-home{
+  display:inline-block;
+  padding:14px 36px;
+  font-family:var(--font-mono);
+  font-size:14px;
+  letter-spacing:2px;
+  color:var(--meow-cyan);
+  border:1px solid var(--meow-cyan-dim);
+  border-radius:4px;
+  background:transparent;
+  transition:all 0.4s;
+  text-shadow:0 0 5px var(--meow-cyan-dim);
+}
+.btn-home:hover{
+  background:rgba(0,240,255,0.08);
+  border-color:var(--meow-cyan);
+  box-shadow:var(--neon-glow-md);
+  color:#fff;
+}
+
+/* Footer tag */
+.footer-tag{
+  margin-top:48px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--text-dim);
+  letter-spacing:2px;
+}
+
+@media(max-width:600px){
+  .error-code{font-size:44px;letter-spacing:6px}
+  .error-msg{font-size:16px}
+  .terminal{font-size:10px;padding:14px 16px}
+  .cat-img{width:200px}
+}
+</style>
+</head>
+<body>
+
+<!-- Scene -->
+<div class="scene">
+
+  <!-- 404 Cat Image -->
+  <img src="images/404-cat.png" alt="猫咪删除了页面" class="cat-img">
+
+  <!-- Ink bottle -->
+  <div class="ink-bottle"></div>
+
+  <!-- 404 -->
+  <span class="error-code">404</span>
+  <p class="error-msg">此页面已被猫咪删除</p>
+  <p class="error-sub">The page you requested has been deleted by a cat.</p>
+
+  <!-- Terminal log -->
+  <div class="terminal">
+    <span class="prompt">mao@meow:~$</span> curl -X GET https://maomeow.com<span class="dim">/missing-page</span><br>
+    <span class="error">Error 404:</span> Resource not found.<br>
+    <span class="dim">[LOG]</span> 检测到异常请求，正在追踪肇事者...<br>
+    <span class="dim">[LOG]</span> 嫌疑猫已确认：花花（正在键盘上睡觉）<br>
+    <span class="dim">[LOG]</span> 建议：<span class="prompt">回到首页</span> 或 <span class="prompt">提供罐头贿赂</span><br>
+    <span class="prompt">mao@meow:~$</span> <span class="dim">_</span>
+  </div>
+
+  <!-- Home button -->
+  <a href="MAO官网.html" class="btn-home">
+    [ 返回首页 ]
+  </a>
+
+  <!-- Tagline -->
+  <p class="footer-tag">Powered by purrs. Approved by paws.</p>
+
+</div>
+
+<!-- Floating particles -->
+<script>
+(function(){
+  var max = 25;
+  function spawn(){
+    if(document.querySelectorAll('.particle').length >= max) return;
+    var el=document.createElement('div');
+    el.className='particle';
+    var s=Math.random()*2+0.5;
+    el.style.cssText=
+      '--drift:'+((Math.random()-0.5)*120)+'px;'+
+      'width:'+s+'px;height:'+s+'px;'+
+      'left:'+(Math.random()*100)+'vw;'+
+      'animation:float-up '+(Math.random()*7000+5000)+'ms '+(Math.random()*2000)+'ms linear forwards;';
+    document.body.appendChild(el);
+    setTimeout(function(){if(el.parentNode)el.remove();},15000);
+  }
+  setInterval(spawn, 700);
+  for(var i=0;i<15;i++) spawn();
+})();
+</script>
+
+</body>
+</html>

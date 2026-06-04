@@ -1815,7 +1815,7 @@ section {
   /* ---- Hero ---- */
   .section-hero { padding-top: calc(var(--header-height) + 30px); padding-bottom: 30px; }
   .hero-totem-img { width: 130px; }
-  .hero-title-en { font-size: 17px; white-space: nowrap; letter-spacing: 0.5px; }
+  .hero-title-en { font-size: 15px; white-space: nowrap; letter-spacing: 0; }
   .hero-title-cn { font-size: 14px; letter-spacing: 2px; }
   .hero-subtitle { font-size: 11px; letter-spacing: 1px; margin-bottom: 30px; }
   .hero-cta { gap: 12px; }
@@ -1854,12 +1854,12 @@ section {
   .team-cards { gap: 14px; flex-direction: column; align-items: stretch; }
   .team-card { flex: 1 1 auto !important; margin-top: 0; }
   .team-card-expand { max-height: none; opacity: 1; }
-  .expand-photo,
-  .expand-info h3,
-  .expand-role,
-  .expand-badge { display: none; }
-  .expand-inner { padding: 4px 0 8px; }
-  .expand-bio { margin-bottom: 10px; }
+  .team-card-expand .expand-photo,
+  .team-card-expand .expand-info h3,
+  .team-card-expand .expand-role,
+  .team-card-expand .expand-badge { display: none !important; }
+  .expand-inner { padding: 4px 0 8px !important; }
+  .expand-bio { margin-bottom: 10px; margin-top: 0; }
   .expand-bio { font-size: 12px; }
   .expand-stats { justify-content: center; gap: 14px; }
   .stat-num { font-size: 15px; }

@@ -1815,7 +1815,7 @@ section {
   /* ---- Hero ---- */
   .section-hero { padding-top: calc(var(--header-height) + 30px); padding-bottom: 30px; }
   .hero-totem-img { width: 130px; }
-  .hero-title-en { font-size: 22px; white-space: normal; letter-spacing: 1px; }
+  .hero-title-en { font-size: 17px; white-space: nowrap; letter-spacing: 0.5px; }
   .hero-title-cn { font-size: 14px; letter-spacing: 2px; }
   .hero-subtitle { font-size: 11px; letter-spacing: 1px; margin-bottom: 30px; }
   .hero-cta { gap: 12px; }
@@ -1856,8 +1856,10 @@ section {
   .team-card-expand { max-height: none; opacity: 1; }
   .expand-photo,
   .expand-info h3,
-  .expand-role { display: none; }
-  .expand-inner { padding: 6px 0 10px; }
+  .expand-role,
+  .expand-badge { display: none; }
+  .expand-inner { padding: 4px 0 8px; }
+  .expand-bio { margin-bottom: 10px; }
   .expand-bio { font-size: 12px; }
   .expand-stats { justify-content: center; gap: 14px; }
   .stat-num { font-size: 15px; }
@@ -2210,8 +2212,7 @@ section {
             <span class="badge-id">MAO-001</span>
           </div>
           <h3 class="team-name">KO</h3>
-          <p class="team-role">首席技术官 / CTO</p>
-          <p class="team-breed">美短银虎斑</p>
+          <p class="team-role">首席技术官 / CTO / 美短银虎斑</p>
           <p class="team-motto">"这个方案，不够香。"</p>
           <div class="team-skills">
             <div class="skill-bar">
@@ -2255,8 +2256,7 @@ section {
             <span class="badge-id">MAO-002</span>
           </div>
           <h3 class="team-name">花花</h3>
-          <p class="team-role">首席市场官 / CMO</p>
-          <p class="team-breed">长毛金点</p>
+          <p class="team-role">首席市场官 / CMO / 长毛金点</p>
           <p class="team-motto">"合作吗？先让我蹭蹭你。"</p>
           <div class="team-skills">
             <div class="skill-bar">
@@ -2300,8 +2300,7 @@ section {
             <span class="badge-id">MAO-003</span>
           </div>
           <h3 class="team-name">D</h3>
-          <p class="team-role">首席运营打杂官 / COO</p>
-          <p class="team-breed">人类（地球籍）</p>
+          <p class="team-role">首席运营打杂官 / COO / 人类</p>
           <p class="team-motto">"赚钱给猫花。"</p>
           <div class="team-skills">
             <div class="skill-bar">

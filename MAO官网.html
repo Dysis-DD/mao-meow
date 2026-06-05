@@ -471,30 +471,7 @@ section {
 }
 
 .hero-wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  opacity: 0.15;
-}
-.hero-wave-1 {
-  top: 35%;
-  background: linear-gradient(90deg, transparent, var(--meow-cyan), transparent);
-  animation: wave-drift-h 6s ease-in-out infinite;
-}
-.hero-wave-2 {
-  top: 50%;
-  background: linear-gradient(90deg, transparent, var(--purple-glow), transparent);
-  animation: wave-drift-h 8s ease-in-out infinite 1s;
-}
-.hero-wave-3 {
-  top: 65%;
-  background: linear-gradient(90deg, transparent, var(--meow-cyan-dim), transparent);
-  animation: wave-drift-h 7s ease-in-out infinite 2s;
-}
-@keyframes wave-drift-h {
-  0%, 100% { transform: translateX(-5%); opacity: 0.08; }
-  50%      { transform: translateX(5%); opacity: 0.2; }
+  display: none;
 }
 
 .hero-content {
@@ -1978,9 +1955,6 @@ section {
   <section id="hero" class="section-hero">
     <div class="hero-bg">
       <!-- Subtle sound wave patterns will be CSS-generated -->
-      <div class="hero-wave hero-wave-1"></div>
-      <div class="hero-wave hero-wave-2"></div>
-      <div class="hero-wave hero-wave-3"></div>
     </div>
 
     <div class="hero-content">

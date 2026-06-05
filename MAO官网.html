@@ -1489,6 +1489,9 @@ section {
   display: flex;
   align-items: center;
 }
+.credits-mobile {
+  display: none;
+}
 
 /* Danmaku items - clean single row */
 .danmaku-item {
@@ -1890,10 +1893,8 @@ section {
   #footer { padding: 40px var(--section-pad-x) 20px; }
   .footer-credits { flex-direction: column; gap: 10px; height: auto; margin-bottom: 24px; align-items: flex-start; }
   .credits-label { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid var(--meow-cyan-dim); padding-bottom: 6px; font-size: 16px; }
-  .credits-track { width: 100%; height: auto; }
-  .credits-track > span { position: static !important; transform: none !important; overflow: visible; }
-  .danmaku-item { font-size: 12px; display: block; animation: none !important; white-space: normal !important; line-height: 1.6; }
-  .danmaku-item::before { content: '· '; }
+  .credits-track { display: none; }
+  .credits-mobile { display: block; font-family: var(--font-mono); font-size: 12px; color: rgba(0,240,255,0.45); line-height: 1.6; word-break: keep-all; }
   .footer-tagline-cn { font-size: 11px; }
   .footer-copy { font-size: 10px; }
 
@@ -2514,6 +2515,7 @@ section {
     <div class="footer-credits">
       <span class="credits-label">鸣谢</span>
       <div class="credits-track" id="danmaku-track"></div>
+      <p class="credits-mobile">DeepSeek · 豆包 · Kimi · Codex · Claude Code · ChatGPT · Copilot · Gemini · 通义千问 · 文心一言 · Cursor · Windsurf</p>
     </div>
 
     <!-- Tagline -->

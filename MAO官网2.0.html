@@ -6296,7 +6296,7 @@ section {
       setTimeout(function() { init(); }, 2000);
     }
 
-    return { init: init, delayInit: delayInit };
+    return { init: init, delayInit: delayInit, returnToCyber: returnToCyber };
   })();
 
   // ---- Wire ShatterEffect into boot sequence ----
@@ -6365,6 +6365,28 @@ section {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }, 100);
   }
+
+  // ---- 返回 MAO 按钮独立绑定（不依赖 ShatterEffect.init） ----
+  setTimeout(function() {
+    var returnBtn = document.getElementById('rp-return-trigger');
+    var backLink = document.getElementById('rp-back-to-cyber');
+    if (returnBtn) {
+      returnBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (typeof ShatterEffect !== 'undefined' && ShatterEffect.returnToCyber) {
+          ShatterEffect.returnToCyber();
+        }
+      });
+    }
+    if (backLink) {
+      backLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (typeof ShatterEffect !== 'undefined' && ShatterEffect.returnToCyber) {
+          ShatterEffect.returnToCyber();
+        }
+      });
+    }
+  }, 500);
 
 })();
 </script>

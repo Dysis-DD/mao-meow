@@ -4012,11 +4012,10 @@ section {
       #sl-contact { padding-bottom: 16px; }
       .sl-section-heading { font-size: 28px; }
       .sl-section-desc { font-size: 14px; }
-      .sl-navbar { flex-wrap: wrap; height: auto; padding: 10px 4vw; justify-content: center; gap: 8px; }
-      .sl-nav-brand { width: 100%; justify-content: center; }
+      .sl-navbar { gap: 4px; }
       .sl-nav-subtitle { font-size: 10px; letter-spacing: 1px; }
-      .sl-nav-links { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; width: 100%; text-align: center; }
-      .sl-nav-links a { font-size: 12px; padding: 6px 10px; }
+      .sl-nav-links { gap: 4px; }
+      .sl-nav-links a { font-size: 11px; padding: 4px 6px; max-width: 2.2em; word-break: break-all; line-height: 1.25; text-align: center; }
       .sl-nav-links a + a::before { display: none; }
       .sl-about-card { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
       .sl-about-avatar { width: 120px; height: 120px; font-size: 40px; border-radius: 14px; outline-offset: 3px; }
@@ -4035,9 +4034,9 @@ section {
     @media (max-width: 480px) {
       .sl-hero-heading { width: 94%; max-width: 480px; }
       .sl-section-heading { font-size: 24px; }
-      .sl-navbar { padding: 6px 3vw; }
-      .sl-nav-links { gap: 2px 6px; }
-      .sl-nav-links a { font-size: 11px; padding: 5px 8px; }
+      .sl-navbar { padding: 0 3vw; }
+      .sl-nav-links { gap: 2px; }
+      .sl-nav-links a { font-size: 10px; padding: 3px 4px; max-width: 2.2em; word-break: break-all; line-height: 1.2; text-align: center; }
       .sl-nav-logo { font-size: 16px; }
       .sl-notes-board { gap: 10px; max-width: 300px; }
       .sl-card-list { gap: 16px; }

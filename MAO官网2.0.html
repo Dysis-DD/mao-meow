@@ -4012,11 +4012,13 @@ section {
       #sl-contact { padding-bottom: 16px; }
       .sl-section-heading { font-size: 28px; }
       .sl-section-desc { font-size: 14px; }
-      .sl-navbar { gap: 4px; }
-      .sl-nav-subtitle { font-size: 10px; letter-spacing: 1px; }
-      .sl-nav-links { gap: 4px; }
-      .sl-nav-links a { display: inline-block; font-size: 11px; padding: 3px 0; width: 2em; word-break: break-all; line-height: 1.3; text-align: center; }
-      .sl-nav-links a + a::before { display: none; }
+      .sl-navbar { padding: 0 3vw; flex-wrap: nowrap; }
+      .sl-nav-logo { font-size: 16px; }
+      .sl-nav-logo-img { height: 24px; }
+      .sl-nav-subtitle { font-size: 9px; letter-spacing: 1px; }
+      .sl-nav-links { gap: 8px; }
+      .sl-nav-links a { font-size: 11px; padding: 4px 6px; }
+      .sl-nav-links a + a::before { height: 10px; }
       .sl-about-card { flex-direction: column; align-items: center; text-align: center; padding: 32px 24px; }
       .sl-about-avatar { width: 120px; height: 120px; font-size: 40px; border-radius: 14px; outline-offset: 3px; }
       .sl-about-tags { justify-content: center; }
@@ -4034,10 +4036,13 @@ section {
     @media (max-width: 480px) {
       .sl-hero-heading { width: 94%; max-width: 480px; }
       .sl-section-heading { font-size: 24px; }
-      .sl-navbar { padding: 0 3vw; }
-      .sl-nav-links { gap: 2px; }
-      .sl-nav-links a { display: inline-block; font-size: 10px; padding: 2px 0; width: 2em; word-break: break-all; line-height: 1.3; text-align: center; }
-      .sl-nav-logo { font-size: 16px; }
+      .sl-navbar { padding: 0 2vw; }
+      .sl-nav-logo { font-size: 14px; }
+      .sl-nav-logo-img { height: 20px; }
+      .sl-nav-subtitle { font-size: 8px; letter-spacing: 0.5px; }
+      .sl-nav-links { gap: 4px; }
+      .sl-nav-links a { font-size: 10px; padding: 3px 4px; }
+      .sl-nav-links a + a::before { height: 8px; }
       .sl-notes-board { gap: 10px; max-width: 300px; }
       .sl-card-list { gap: 16px; }
       .sl-project-card { padding: 28px 20px 24px; }

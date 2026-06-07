@@ -4942,6 +4942,10 @@ section {
     }
   }
 
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
   function skipToMain() {
     canvas.style.display = 'none';
     mainContent.classList.add('visible');
@@ -4950,6 +4954,7 @@ section {
       loadingScreen.classList.add('hidden');
       setTimeout(function() { loadingScreen.style.display = 'none'; }, 500);
     }
+    localStorage.setItem('maomeow_visited', '1');
   }
 
   // ============================================================
@@ -4970,6 +4975,12 @@ section {
           setTimeout(function() {
             if (loadingScreen) loadingScreen.style.display = 'none';
           }, 500);
+        }
+
+        // Mobile: skip canvas animation entirely — it's hidden by CSS
+        if (isMobile()) {
+          skipToMain();
+          return;
         }
 
         if (visited) {

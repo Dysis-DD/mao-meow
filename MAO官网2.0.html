@@ -6337,34 +6337,7 @@ section {
     skipToMain();
   }
 
-  // Auto-restore: 刷新时回到对应页面
-  // 日光实验室页面刷新 → 回到日光实验室
-  // MAO 页面刷新 → 回到 MAO 首页（默认行为）
-  if (localStorage.getItem('sl_lab_active') === '1') {
-    setTimeout(function() {
-      var cyberPage = document.getElementById('cyber-page');
-      var realPage = document.getElementById('real-page');
-      var trigger = document.getElementById('shatter-trigger');
-      var entryCanvas = document.getElementById('entry-canvas');
-      var loadingScreen = document.getElementById('loading-screen');
-
-      // 隐藏 MAO 页面
-      if (entryCanvas) entryCanvas.style.display = 'none';
-      if (loadingScreen) { loadingScreen.classList.add('hidden'); loadingScreen.style.display = 'none'; }
-      if (cyberPage) cyberPage.style.display = 'none';
-      if (mainContent) { mainContent.style.opacity = '0'; mainContent.classList.remove('visible'); }
-
-      // 显示日光实验室
-      if (realPage) realPage.classList.add('revealed');
-      if (trigger) { trigger.style.opacity = '0'; trigger.style.pointerEvents = 'none'; }
-
-      // 初始化日光实验室模块
-      if (typeof SunlightLab !== 'undefined' && SunlightLab.init) {
-        SunlightLab.init();
-      }
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }, 100);
-  }
+  // 始终从 MAO 首页开始，不记忆上次页面状态
 
   // ---- 返回 MAO 按钮独立绑定（不依赖 ShatterEffect.init） ----
   setTimeout(function() {
